@@ -13,7 +13,6 @@
 		BADE08C2284CCE9A005288E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BADE08C0284CCE9A005288E9 /* Main.storyboard */; };
 		BADE08C4284CCE9C005288E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BADE08C3284CCE9C005288E9 /* Assets.xcassets */; };
 		BADE08C7284CCE9C005288E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BADE08C5284CCE9C005288E9 /* LaunchScreen.storyboard */; };
-		BADE08CF284CD1B2005288E9 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADE08CE284CD1B2005288E9 /* SettingsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +24,6 @@
 		BADE08C3284CCE9C005288E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BADE08C6284CCE9C005288E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BADE08C8284CCE9C005288E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BADE08CE284CD1B2005288E9 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +63,6 @@
 				BADE08C3284CCE9C005288E9 /* Assets.xcassets */,
 				BADE08C5284CCE9C005288E9 /* LaunchScreen.storyboard */,
 				BADE08C8284CCE9C005288E9 /* Info.plist */,
-				BADE08CE284CD1B2005288E9 /* SettingsTableViewCell.swift */,
 			);
 			path = hw13;
 			sourceTree = "<group>";
@@ -143,7 +140,6 @@
 			files = (
 				BADE08BF284CCE9A005288E9 /* ViewController.swift in Sources */,
 				BADE08BB284CCE9A005288E9 /* AppDelegate.swift in Sources */,
-				BADE08CF284CD1B2005288E9 /* SettingsTableViewCell.swift in Sources */,
 				BADE08BD284CCE9A005288E9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
