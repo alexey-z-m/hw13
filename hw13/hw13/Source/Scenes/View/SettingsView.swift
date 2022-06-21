@@ -1,30 +1,41 @@
 import UIKit
 
-class ViewController: UIViewController {
+class SettingsView: UIView {
+    private var models = [Sections]()
+    func configureView(with models: [Sections]) {
+        self.models = models
+    }
+    
     private let tableView: UITableView = {
         var table = UITableView(frame: .zero, style: .grouped)
         table.register(SettingsTableViewCell.self, forCellReuseIdentifier: SettingsTableViewCell.identifier)
         table.register(SwitchTableViewCell.self, forCellReuseIdentifier: SwitchTableViewCell.identifier)
+        table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.addSubview(tableView)
-        title = Strings.viewTitle
-        setupTableView()  
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        addSubview(tableView)
+        setupTableView()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError()
     }
     
     func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.frame = view.bounds
+        tableView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
 }
 
-extension ViewController: UITableViewDataSource {
+extension SettingsView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let models = Model.getModel()
         let model = models[indexPath.section].options[indexPath.row]
         switch model.self {
         case .staticCell(let model):
@@ -49,20 +60,17 @@ extension ViewController: UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        let models = Model.getModel()
         return models.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let models = Model.getModel()
         return models[section].options.count
     }
 }
 
-extension ViewController: UITableViewDelegate {
+extension SettingsView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let models = Model.getModel()
         let model = models[indexPath.section].options[indexPath.row]
         switch model.self {
         case .staticCell(let model):
@@ -70,11 +78,5 @@ extension ViewController: UITableViewDelegate {
         case .switchCell(let model):
             model.handler(model.title)
         }
-    }
-}
-
-extension ViewController {
-    enum Strings {
-        static let viewTitle = "Настройки"
     }
 }

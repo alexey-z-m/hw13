@@ -1,15 +1,7 @@
-//
-//  SettingsModel.swift
-//  hw13
-//
-//  Created by Panda on 09.06.2022.
-//
-
-import Foundation
 import UIKit
 
-class Model {
-    static func getModel() ->[Sections] {
+class SettingsModel {
+    func getModel() ->[Sections] {
         var model = [Sections]()
         let optionsFirst: [SettingsOptonsType] = [
             .switchCell(model: SettingsSwitchOptons(
@@ -144,7 +136,7 @@ class Model {
     }
 }
 
-extension Model {
+extension SettingsModel {
     enum Strings {
         static let airplaneTitle = "Авиарежим"
         static let airplaneIcon = "airplane"
@@ -193,8 +185,6 @@ struct SettingsOptons {
 struct Sections {
     let title: String
     let options: [SettingsOptonsType]
-    
-    
 }
 
 struct SettingsSwitchOptons {
