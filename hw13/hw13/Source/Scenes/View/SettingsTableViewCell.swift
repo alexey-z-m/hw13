@@ -110,7 +110,6 @@ class SettingsTableViewCell: UITableViewCell {
         } else {
             notificationsContainer.backgroundColor = nil
         }
-        
     }
 }
 
