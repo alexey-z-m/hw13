@@ -1,6 +1,6 @@
 import UIKit
 
-class SettingsModel {
+final class SettingModel {
     func getModel() ->[Sections] {
         var model = [Sections]()
         let optionsFirst: [SettingsOptonsType] = [
@@ -136,7 +136,7 @@ class SettingsModel {
     }
 }
 
-extension SettingsModel {
+extension SettingModel {
     enum Strings {
         static let airplaneTitle = "Авиарежим"
         static let airplaneIcon = "airplane"
@@ -172,31 +172,3 @@ extension SettingsModel {
         static let uaccesIcon = "figure.wave.circle"
     }
 }
-
-struct SettingsOptons {
-    let title: String
-    let icon: UIImage?
-    let iconBackgroundColor: UIColor
-    let handler: ((String) -> Void)
-    let detail: String?
-    let notifications: String?
-}
-
-struct Sections {
-    let title: String
-    let options: [SettingsOptonsType]
-}
-
-struct SettingsSwitchOptons {
-    let title: String
-    let icon: UIImage?
-    let iconBackgroundColor: UIColor
-    let handler: ((String) -> Void)
-    let isOn: Bool
-}
-
-enum SettingsOptonsType {
-    case staticCell(model: SettingsOptons)
-    case switchCell(model: SettingsSwitchOptons)
-}
-
